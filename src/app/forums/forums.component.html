@@ -1,0 +1,21 @@
+<table [ngStyle]="{'opacity':display===true?0.09:1}">
+    <tr>
+      <th>Category</th>
+      <th>Title</th>
+      <th>Written By</th>
+      <th>Created On</th>
+      <th>Content</th>
+    </tr>
+    <tr *ngFor="let blog of blog; let i = index">
+      <td>{{blog.postCategory}}</td>
+      <td>{{blog.title | uppercase}}</td>
+      <td>{{blog.author}}</td>
+      <td>{{blog.postDate|date}}</td>
+      <td>
+        <p id="content">{{blog.content}}</p>
+        <a (click)="openBlogDetails(i)" style="text-decoration: none;  color: blue; cursor: pointer;">...Read More</a>
+      </td>
+    </tr>
+  </table>
+
+  <app-all-blogs class="z-index" *ngIf="display" [blogs]="blog" [index]="index" [display]=display (displayChanged)="displayChange($event)"></app-all-blogs>

@@ -1,0 +1,12 @@
+.navbar{
+    background-color: rgb(153, 207, 161);
+}
+
+#tech{
+    color: blue;
+}
+.navbar-nav> li:hover{
+    border: 1px thin black;
+    background-color: rgb(204, 255, 212);
+    border-radius: 5px;
+}

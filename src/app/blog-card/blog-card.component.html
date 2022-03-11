@@ -1,0 +1,27 @@
+<div class="card"  *ngFor="let card of cards; let i = index" [ngStyle]="{'opacity':display===true?0.09:1}" style="width: 18rem;">
+
+    <img src="../../assets/garage-wallpaper-2.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-owner-date"> Posted by {{card.author}} | {{card.postDate|date}}</p>
+      <h5 class="card-title">{{card.title|uppercase}}</h5>
+      <p class="card-text">{{card.content}}</p>
+      <a (click)="openBlogDetails(i)" style="text-decoration: none; color: rgb(78, 78, 253); cursor: pointer;">...Read More</a>
+            
+      <hr>
+    </div>
+    <div class="card-body">
+      <div class="like">
+        <a style="cursor: pointer;" (click)="onLike(i)"><fa-icon [icon]="faHeart"></fa-icon></a>
+        <p>{{card.likes}} Likes</p>
+      </div>
+   
+      <div class="comment" style="cursor: pointer;" (click)="openBlogDetails(i)">
+        <a><fa-icon [icon]="faComment"></fa-icon></a>
+        <p>Leave a comment</p>
+      </div>
+    </div>
+</div>
+
+<app-all-blogs class="z-index" *ngIf="display" [blogs]="cards" [index]="index" [display]=display (displayChanged)="displayChange($event)"></app-all-blogs>
+
+

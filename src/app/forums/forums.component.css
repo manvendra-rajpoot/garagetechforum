@@ -1,0 +1,39 @@
+table{
+    width: 90%;
+    margin: auto;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px thin lightgray;
+}
+
+table th{
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid rgb(88, 71, 71);
+}
+
+table td{
+    padding: 20px;
+}
+
+table tr{
+    border-bottom: 2px solid rgb(90, 73, 73);
+}
+
+table tr:last-child{
+    border: none;
+}
+
+#content{
+    line-height: 18px;
+    max-height: 36px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.z-index{
+    position: absolute;
+    z-index: 1;
+    top:0;
+}

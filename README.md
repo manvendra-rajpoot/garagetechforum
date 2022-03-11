@@ -1,27 +1,80 @@
 # GarageForum
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+This project was generated with Angular and Redux.
 
-## Development server
+### Aim
+Create Angular project e.g. –>   garagetechforum
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**Header**
+- Home
+- Blog
+    - Create blog (open blog post form)
+- Contact us
+- Forums
+    - List all blogs in table
 
-## Code scaffolding
+***Home*** :<br>
+When user clicks on home, Need to create cards for blogs
+- 3-4 cards in one row starting 2nd half of the screen.
+- Card should be clickable
+- Sample design below 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+***Blog Post Form***
 
-## Build
+*Form Fields:*
+- blogTitle -- mandatory
+- blogContent -- mandatory
+- blogCategory 
+- blogTag
+- blogAuthor -- mandatory
+- blogPostDate -- mandatory
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+*Form Submission:* 
+- Once we submit form, blue success card should be flashed. Should be reusable in multiple forms.
+- Redirect to home after successful submission.
+- If any error comes from server orange card should be flashed. Should be reusable across application.
 
-## Running unit tests
+***Card Design sample***:<br>
+*Card Filter*:
+Filter card functionality with title, category, or tag.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+*Card clicks*:
+When user clicks on card. it should open the details in form used to submit it.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+*Likes*:
+Add a likes counter and keep on adding if user hits it.
 
-## Further help
+*Comment*:
+Add an addition array inside current array.
+```
+{
+    Blogtitle,
+    Id,
+    Comment:[ 
+        {
+            Date:,
+            Comment:,
+            commentBy:
+        },
+    ]
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Blog posts : To learn http CRUD**
+
+https://jsonplaceholder.typicode.com/guide/
+
+Use this link to use get api for post and display in tabular format with mat-table
+Use angular httpclient module.
+
+
+
+### Technologies:
+
+- Latest version of angular.
+- Redux for state management
+- Bootstrap
+- Responsive design
+- Should not have any inline style
+
